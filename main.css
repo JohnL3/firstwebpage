@@ -283,4 +283,16 @@ hr{
 
 
 }
-		
+@media (min-height:880px) and (min-width:630px){
+	.portfolio{
+		top:900px;
+	}
+	.about-img{
+		width:500px;
+	}
+	.project{
+		padding:5px 40px 5px 5px;
+	}
+
+
+}		
