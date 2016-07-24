@@ -59,7 +59,7 @@ h1{
 	background: url("https://raw.githubusercontent.com/JohnL3/Photos/master/zeros.jpg");
 	overflow-x: hidden;
 	 background-position: center;
-	height: 600px;
+	height: 100%;
 	background-repeat: repeat-x;
 	opacity: 0.3;
 	z-index: -1;
