@@ -208,7 +208,7 @@ hr{
 		float:right;
 	}
 	.portfolio{
-		top:600px;
+		top:640px;
 	}
 	.place-holder{
 	width:50%;
@@ -256,14 +256,14 @@ hr{
 		margin-top:20px;
 	}
 		.portfolio{
-		top:600px;
+		top:640px;
 	}
 
 }
 
 @media (min-height:643px) and (min-width:420px){
 	.portfolio{
-		top:600px;
+		top:640px;
 	}
 		.about-img{
 		width:440px;
@@ -272,7 +272,7 @@ hr{
 }
 @media (min-height:550px) and (min-width:630px){
 	.portfolio{
-		top:600px;
+		top:640px;
 	}
 	.about-img{
 		width:400px;
