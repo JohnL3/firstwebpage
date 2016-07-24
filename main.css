@@ -54,7 +54,7 @@ h1{
 .fix-img{
 	position: fixed;
 	top:114px;
-	width: 100%;
+
 	background-size: cover;
 	background: url("https://raw.githubusercontent.com/JohnL3/Photos/master/zeros.jpg");
 	overflow-x: hidden;
