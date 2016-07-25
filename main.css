@@ -261,7 +261,7 @@ hr{
 
 }
 
-@media (min-height:643px) and (min-width:420px){
+@media (min-height:643px) and (min-width:430px){
 	.portfolio{
 		top:640px;
 	}
