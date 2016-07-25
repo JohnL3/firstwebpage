@@ -193,7 +193,7 @@ hr{
 	box-shadow: 5px 5px 5px #888888;
 }
 
-@media (min-width:430px){
+@media (min-width:441px){
 	.fix-image{
 		top:160px;
 	}
@@ -261,7 +261,7 @@ hr{
 
 }
 
-@media (min-height:643px) and (min-width:430px){
+@media (min-height:643px) and (min-width:441px){
 	.portfolio{
 		top:640px;
 	}
