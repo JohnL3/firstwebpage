@@ -193,7 +193,7 @@ hr{
 	box-shadow: 5px 5px 5px #888888;
 }
 
-@media (min-width:420px){
+@media (min-width:430px){
 	.fix-image{
 		top:160px;
 	}
