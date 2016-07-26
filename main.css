@@ -53,8 +53,8 @@ h1{
 }
 .fix-img{
 	position: fixed;
-	
-	width:100%;
+	top:114px;
+	width: 100%;
 	background-size: cover;
 	background: url("https://raw.githubusercontent.com/JohnL3/Photos/master/zeros.jpg");
 	overflow-x: hidden;
@@ -79,7 +79,7 @@ h1{
 }
 
 .about-img{
-	width:300px;
+	width:280px;
 	margin-right: 15px;
 	border:10px solid #6f6f73;
 	z-index: 1;
@@ -93,6 +93,7 @@ h1{
 }
 h2{
 	color:#353535;
+    margin-left: -10px;
 	z-index: 1;
 }
 .about-title-b{
@@ -108,10 +109,10 @@ h2{
 /*------End of about ----*/
 .portfolio{
 	position: absolute;
-	top: 640px;
-	width: 100%;
+	top: 100%;
+	max-width: 100%;
 	text-align: center;
-	height: 480px;
+	height: 100%;
 	background-color: white;
 	border-top: 5px solid black;
 	border-bottom: 5px solid black;
@@ -150,17 +151,17 @@ h2{
 /* -------- End of portfolio --------*/
 .contact{
 	position:absolute;
-	top:1090px;
+	top:190%;
 	width: 100%;
 	text-align: center;
-	height: 440px;
+	height: 100%;
 	background-color: white;
 	margin-left: -8px;
 	z-index: 3;
 }
 .footer{
 	position: absolute;
-	top:400px;
+	top:95%;
 	width: 100%;
 	height: 40px;
 	background-color: #d4d4d4;
@@ -193,10 +194,13 @@ hr{
 	box-shadow: 5px 5px 5px #888888;
 }
 
-@media (min-width:421px){
+@media (min-width:426px){
 	.fix-image{
 		top:160px;
 	}
+    .about-img{
+        width: 340px;
+    }
 	.header-bar-tex, .header-bar-say{
 		display:none;
 	}
@@ -208,91 +212,25 @@ hr{
 		float:right;
 	}
 	.portfolio{
-		top:640px;
+		top:99%;
+       width:100%;
 	}
 	.place-holder{
+    margin-top:60px;
 	width:50%;
 	margin-left:25%;
 	margin-right:25%;
 
 }
+    .contact{
+    top:171%;
+    height: 500px;
+    }
 
 
 }
-@media (min-width: 610px){
-	.fix-image{
-		top:140px;
-	}
-	.header-title-div{
-		width:87%;
-		float:left;
-		margin-left:8%;
-	}
-	.header-title-say{
-		display:inline;
-		position:absolute;
-		top:20px;
-	}
-	.header-title-say-r{
-		display:inline;
-		position:absolute;
-		top:15px;
-		right:15px;
-	}
-
-
-}
-
-@media (min-width: 630px){
-	
-	.header-title-say{
-		margin-left:2%;
-	}
-
-	.about-img{
-		width:340px;
-	}
-		.logo{
-		margin-top:20px;
-	}
-		.portfolio{
-		top:640px;
-	}
-
-}
-
-@media (min-height:643px) and (min-width:421px){
-	.portfolio{
-		top:640px;
-	}
-		.about-img{
-		width:440px;
-	}
-
-}
-@media (min-height:550px) and (min-width:630px){
-	.portfolio{
-		top:640px;
-	}
-	.about-img{
-		width:400px;
-	}
-	.project{
-		padding:5px 40px 5px 5px;
-	}
-
-
-}
-@media (min-height:880px) and (min-width:630px){
-	.portfolio{
-		top:900px;
-	}
-	.about-img{
-		width:500px;
-	}
-	.project{
-		padding:5px 40px 5px 5px;
-	}
-
-
-}		
+@media(min-width: 1025px){
+    .about-img{
+        width:440px;
+    }
+}	
