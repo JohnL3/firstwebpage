@@ -6,6 +6,11 @@ body{
 	top:170px;
 	left:90px;
 }
+.w-w{
+	position:absolute;
+	top:180px;
+	left:90px;
+}
 .header{
 	position: fixed;
 	width: 100%;
