@@ -5,6 +5,8 @@ $(document).ready(function () {
     'use strict';
     var h = $(window).height();
     $('.w-h').text(h);
+    var w = $(window).width();
+    $('.w-w').text(w);
     $('.header-bar-tex').click(function () {
         var s = $('.header-drop').css('display');
         if (s === 'none') {
