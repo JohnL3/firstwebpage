@@ -1,0 +1,188 @@
+Sub new_setof_books()
+    ' Do initial setup
+    ' This calls and runs the sub (similar to calling a function)
+    
+setUpSheet
+
+    '
+    '
+    '
+    
+Dim check_month As String, F_label As String, sub_folder As String, workbook_name As String, book_type As String
+Worksheets(1).Activate
+Application.ScreenUpdating = False
+    Columns("Q:U").Select
+    Selection.EntireColumn.Hidden = False
+check_year = Year(Date)
+mon = Month(Date)
+
+If mon = 12 Then
+check_year = check_year + 1
+End If
+
+check_month = Cells(33, 18).Value
+workbook_name = "\Claim 11 December "
+book_type = ".xlsx"
+
+F_label = Cells(40, 18).Value
+
+'Create folder for following year sheets
+
+sub_folder = F_label
+If Len(Dir("C:\Users\Staff4\Desktop\NewBooks\" & sub_folder, vbDirectory)) = 0 Then
+
+  'MkDir "C:\Users\Staff4\Desktop\NewBooks\" was using this line to create outer folder NewBooks
+   MkDir "C:\Users\Staff4\Desktop\NewBooks\" & sub_folder
+End If
+
+' This calls the Al_months_array function and passes the sub_folder as a paramater
+'
+All_months_array sub_folder
+'
+'
+
+Workbooks.Open Filename:="C:\Users\Staff4\Desktop\NewBooks\" & check_year & "\Claim 1 January " & check_year & ".xlsx"
+
+    Sheets("Payments Book").Select
+    Range("D25:N25").Select
+    Selection.FormulaR1C1 = "=R[-1]C"
+    ActiveSheet.Shapes("Button 1").Select
+    Selection.Cut
+    
+    Sheets("Receipts Book").Select
+    Range("D29:I29").Select
+    Selection.FormulaR1C1 = "=R[-1]C"
+    ActiveSheet.Shapes("Button 2").Select
+    Selection.Cut
+    Sheets("Payments Book").Select
+    Columns("R:R").Select
+    Selection.EntireColumn.Hidden = True
+    Sheets("Receipts Book").Select
+    Columns("O:O").Select
+    Range("O4").Activate
+    Selection.EntireColumn.Hidden = True
+    Range("A4").Select
+    ActiveCell.FormulaR1C1 = "MONTH: January"
+    With ActiveCell.Characters(Start:=8, Length:=7).Font
+        .name = "Calibri"
+        .FontStyle = "Bold Italic"
+        .Size = 14
+        .Underline = xlUnderlineStyleSingle
+        .ColorIndex = xlAutomatic
+    End With
+    ActiveSheet.Protect
+    Range("C23").Select
+    Sheets("Payments Book").Select
+    ActiveSheet.Protect
+    Range("C23").Select
+    '
+    '
+    Dim CheckYear As String
+    Dim CheckMonth As String
+    CheckMonth = Month(Date)
+    CheckYear = Year(Date)
+    If CheckMonth = 12 Then
+    CheckYear = CheckYear + 1
+    End If
+    
+    Dim workbookName As String
+    workbookName = "Claim 12 December " & CheckYear & ".xlsx"
+    Windows(workbookName).Activate
+    ActiveWorkbook.Save
+    ActiveWindow.Close
+    
+    Windows("Create New Set Of Books.xlsm").Activate
+    ActiveWorkbook.Save
+    ActiveWindow.Close
+    
+End Sub
+
+Function All_months_array(ByVal sub_folder As String)
+
+Dim CheckYear As String
+Dim CheckMonth As String
+CheckMonth = Month(Date)
+CheckYear = Year(Date)
+If CheckMonth = 12 Then
+CheckYear = CheckYear + 1
+End If
+
+Dim result(0 To 11) As String
+Dim Month_arr(0 To 11) As String
+
+Month_arr(0) = "January"
+Month_arr(1) = "February"
+Month_arr(2) = "March"
+Month_arr(3) = "April"
+Month_arr(4) = "May"
+Month_arr(5) = "June"
+Month_arr(6) = "July"
+Month_arr(7) = "August"
+Month_arr(8) = "September"
+Month_arr(9) = "October"
+Month_arr(10) = "November"
+Month_arr(11) = "December"
+
+For i = LBound(Month_arr) To UBound(Month_arr)
+Cells(4, 1).Select
+With Selection
+.Value = "Month: " & Month_arr(i)
+End With
+Cells(33, 18).Select
+With Selection
+.Value = Month_arr(i)
+End With
+ChDir "C:\Users\Staff4\Desktop\NewBooks\" & sub_folder
+ActiveWorkbook.SaveAs Filename:= _
+"C:\Users\Staff4\Desktop\NewBooks\" & "2017\" & "Claim " & i + 1 & " " & Month_arr(i) & " " & CheckYear & ".xlsx"
+ 
+Next i
+
+End Function
+
+Sub setUpSheet()
+    ' This opens the Template I use and
+    ' then updates number on sheets
+    
+
+    
+    Application.ScreenUpdating = False
+    Workbooks.Add Template:= _
+        "C:\Users\Staff4\AppData\Roaming\Microsoft\Templates\NewBooksTwo.xltm"
+        
+        Worksheets(1).Activate
+        Range("G2").Select
+        Range("G2").Copy
+        Range("G2").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    
+        Worksheets(3).Activate
+        Range("G3").Select
+        Range("G3").Copy
+        Range("G3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    
+        Worksheets(4).Activate
+        Range("G2").Select
+        Range("G2").Copy
+        Range("G2").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    
+        Worksheets(5).Activate
+        Range("G2").Select
+        Range("G2").Copy
+        Range("G2").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Application.CutCopyMode = False
+    
+
+End Sub
+
+
